@@ -1,0 +1,7 @@
+{
+  "name": "MoneySaver",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-title>
+    MoneySaver
+  </ion-title>
+</ion-header>
+<ion-content>
+  <div *ngIf="user != null">
+    <h3>Bem vindo: {{ user.email }}</h3>
+    <br>
+    <br>
+    <button ion-button block (click)="Sair()">Sair</button>
+  </div>
+
+      <div *ngIf="user == null">
+        <div class="container">
+        <br>
+        <h3>Login / Cadastro</h3>
+        <ion-list>
+          <ion-item>
+            <ion-label floating>
+              <ion-icon name='person'>
+              </ion-icon> Usuário
+            </ion-label>
+            <ion-input type="text" #usuario></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>
+              <ion-icon name='lock-closed'>
+              </ion-icon> Senha
+            </ion-label>
+            <ion-input type="password" #senha></ion-input>
+          </ion-item>
+        </ion-list>
+
+        <button ion-button block (click)="LoginComEmail()">Login</button>
+        <button ion-button block (click)="redirectTo('/teste')">Cadastrar</button>
+      </div>
+    </div>
+</ion-content>

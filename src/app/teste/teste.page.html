@@ -1,0 +1,40 @@
+<ion-header>
+
+    <a href="login"><ion-icon name="arrow-back-outline"></ion-icon></a>
+    <ion-title>Cadastro</ion-title>
+
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+      <ion-item>
+        <ion-label fixed>Email</ion-label>
+        <ion-input type="text" [(ngModel)]="usuario.email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Senha</ion-label>
+        <ion-input type="password" [(ngModel)]="usuario.senha"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Nome</ion-label>
+        <ion-input type="text" [(ngModel)]="usuario.nome"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label fixed>CPF</ion-label>
+        <ion-input type="text" [(ngModel)]="usuario.cpf"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label fixed>Telefone</ion-label>
+        <ion-input type="text" [(ngModel)]="usuario.tel"></ion-input>
+      </ion-item>
+
+      <button ion-button expand="full" (click)="cadastrarUsuario()">Cadastrar Usuário</button>
+
+  </ion-list>
+
+</ion-content>
