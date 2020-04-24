@@ -1,6 +1,7 @@
 ion-header{
-    height: 50px;
+    height: 10%;
     background: #2d8f45;
+    padding: 7px;
 }
 
 
@@ -46,5 +47,17 @@ button{
     border-radius: 5px;
     color: white;
     background: #2d8f45;
+}
+
+.slide{
+    height: 100%;
+    background: #2d5335;
+    color: white;
+    font-family: Helvetica;
+    text-shadow: 1px 1px 1px #111;
+}
+
+.slide1{
+    padding: 20px;
 }
 

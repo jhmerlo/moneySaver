@@ -1,41 +1,83 @@
-<ion-header>
-
+<ion-header *ngIf="slider==false">
   <ion-title>
     MoneySaver
   </ion-title>
 </ion-header>
-<ion-content>
-  <div *ngIf="user != null">
-    <h3>Bem vindo: {{ user.email }}</h3>
-    <br>
-    <br>
-    <button ion-button block (click)="Sair()">Sair</button>
+<ion-content padding>
+  <div *ngIf="slider==false && logged==null">
+    <div class="container">
+      <br>
+      <h3>Login / Cadastro</h3>
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name='person'>
+          </ion-icon> Usuário
+        </ion-label>
+        <ion-input type="text" #usuario></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name='lock-closed'>
+          </ion-icon> Senha
+        </ion-label>
+        <ion-input type="password" #senha></ion-input>
+      </ion-item>
+
+      <button ion-button block (click)="LoginComEmail()">Login</button>
+      <button ion-button block (click)="cadastrarUsuario()">Cadastrar</button>
+    </div>
   </div>
 
-      <div *ngIf="user == null">
-        <div class="container">
-        <br>
-        <h3>Login / Cadastro</h3>
-        <ion-list>
-          <ion-item>
-            <ion-label floating>
-              <ion-icon name='person'>
-              </ion-icon> Usuário
-            </ion-label>
-            <ion-input type="text" #usuario></ion-input>
-          </ion-item>
+  <div *ngIf="slider==false && logged!=null">
+    <div class="container">
+      <ion-button expand="block" (click)="Sair()">SAIR</ion-button>
+      <ion-button expand="block" (click)="get()">TESTE</ion-button>
+    </div>
+  </div>
 
-          <ion-item>
-            <ion-label floating>
-              <ion-icon name='lock-closed'>
-              </ion-icon> Senha
-            </ion-label>
-            <ion-input type="password" #senha></ion-input>
-          </ion-item>
-        </ion-list>
 
-        <button ion-button block (click)="LoginComEmail()">Login</button>
-        <button ion-button block (click)="redirectTo('/teste')">Cadastrar</button>
-      </div>
+    <div *ngIf="slider==true" class="slide">
+      <ion-slides class="slide" pager="true" [options]="slideOpts">
+        <ion-slide class="slide1">
+          <div>
+            <h1>Seja bem vindo ao MoneySaver!</h1>
+            <p>Este aplicativo foi desenvolvido para você, que deseja
+              ter um maior controle sobre os seus gastos, e o melhor:
+              tudo na palma da sua mão.
+            </p>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div>
+            <h1>Primeiros passos</h1>
+            <p>Comece nos informando o seu nome:
+            </p>
+            <ion-item>
+              <ion-label floating>
+                <ion-icon name='person'>
+                </ion-icon> Nome
+              </ion-label>
+              <ion-input type="text" #nome></ion-input>
+            </ion-item>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div>
+            <h1>Queremos conhecer você</h1>
+            <p>Informe a sua data de nascimento:
+            </p>
+            <ion-item>
+              <ion-label floating>
+                <ion-icon name='calendar-outline'>
+                </ion-icon> Data
+              </ion-label>
+              <ion-input type="date" #celular></ion-input>
+            </ion-item>
+            <br>
+            <ion-button expand="block" (click)="send()"> Começar </ion-button>
+          </div>
+        </ion-slide>
+      </ion-slides>
     </div>
 </ion-content>
